@@ -1,5 +1,5 @@
 import React from 'react'
-import {Container, Row, Col, Card, ListGroup} from 'react-bootstrap'
+import {Container, Row, Col, Card, ListGroup,Alert} from 'react-bootstrap'
 import Navbar_ from '../components/Navbar_'
 import Loading from '../components/Loading'
 
@@ -11,7 +11,7 @@ class ShowPage extends React.Component {
        show:null,
       };
    }
-
+  
   componentDidMount() {
     const self = this
     fetch(`https://api.tvmaze.com/shows/${this.props.match.params.id}`)
@@ -52,23 +52,22 @@ class ShowPage extends React.Component {
                 }
                 <Card.Title className="my-3">Description</Card.Title>
                 <Card.Text dangerouslySetInnerHTML={{__html: this.state.show.summary}}></Card.Text>
-                
                 <Card.Title className="my-3">Schedule</Card.Title>
               <ListGroup variant="flush">
-                  <ListGroup.Item>{
-                  this.state.show.schedule ?
+                  <ListGroup.Item disabled>{
+                  (this.state.show.schedule && this.state.show.schedule.time.lenght != null) ?
                   this.state.show.schedule.time
-                  :null
+                  :<span>time information not found...</span>
                 }</ListGroup.Item>
-                  <ListGroup.Item>{
-                  this.state.show.schedule ?
+                  <ListGroup.Item disabled>{
+                  (this.state.show.schedule && this.state.show.schedule.days.lenght != null) ?
                   this.state.show.schedule.days
-                  :null
+                  :<span>day information not found...</span>
                 }</ListGroup.Item>
-                 <ListGroup.Item  >{
-                  this.state.show.rating ?
+                 <ListGroup.Item disabled>{
+                  (this.state.show.rating && this.state.show.rating.lenght != null) ?
                   this.state.show.rating.average
-                  :null
+                  :<span>average information not found...</span>
                 }</ListGroup.Item>
               </ListGroup>
               </Col>
