@@ -14,7 +14,6 @@ class App extends React.Component {
         <Route path="/search" component={SearchPage} />
         <Route path="/:search" component={SearchResultPage} />
         <Redirect push to="/batman" />
-        {/* <Route exact path="/" component={SearchPage} /> */}
       </Switch>
     );
   }
