@@ -2,9 +2,10 @@ import React from 'react'
 import { connect } from 'react-redux';
 import { receiveNewSearch } from '../actions';
 import {withRouter} from 'react-router-dom'
+import { Form, Col } from 'react-bootstrap';
+import { Row } from 'react-bootstrap';
 
 class SearchBox extends React.Component {
-  
   constructor(props) {
     super(props);
     props.dispatch(receiveNewSearch({
@@ -14,13 +15,13 @@ class SearchBox extends React.Component {
 
   render() {
     return (
-      <form onSubmit={this.onSubmitHandler}>
-        <div className="row">
-          <div className="col-6">
+      <Form onSubmit={this.onSubmitHandler}>
+        <Row className="row">
+          <Col className="col-6">
             <input type="search" value={this.state.searchMessage} onChange={this.onSearchChangeHandler} placeholder="Search" ref="search" />
-          </div>
-        </div>
-      </form>
+          </Col>
+        </Row>
+      </Form>
     );
   }
 }
