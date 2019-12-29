@@ -1,12 +1,12 @@
 import React from 'react'
 import SearchBox from '../containers/SearchBox';
-import Navbar_ from '../components/Navbar_';
+import Navbar from '../components/Navbar';
 import { Container } from 'react-bootstrap';
 
 const SearchPage = () => (
   
     <Container>
-      <Navbar_ />
+      <Navbar />
       <SearchBox />
     </Container>
     
@@ -14,19 +14,3 @@ const SearchPage = () => (
 );
 
 export default SearchPage;
-
-/*
-class SearchPage extends React.Component {
-  render() {
-    return (
-      <Container>
-        <Navbar_ />
-        <SearchBox />
-      </Container>
-      
-    );
-  }
-}
-
-export default SearchPage;
-*/
