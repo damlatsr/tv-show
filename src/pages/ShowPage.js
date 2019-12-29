@@ -1,6 +1,6 @@
 import React from 'react'
-import {Container, Row, Col, Card, ListGroup,Alert} from 'react-bootstrap'
-import Navbar_ from '../components/Navbar_'
+import {Container, Row, Col, Card, ListGroup} from 'react-bootstrap'
+import Navbar from '../components/Navbar'
 import Loading from '../components/Loading'
 
 
@@ -11,7 +11,33 @@ class ShowPage extends React.Component {
        show:null,
       };
    }
-  
+/*
+   componentDidUpdate(){
+    const self = this
+    fetch(`https://api.tvmaze.com/search/shows?q=${this.props.match.params.id}`)
+    .then((resp) => resp.json())
+    .then(function(data) {
+      self.setState({
+        results: data
+      })
+     // self.props.dispatch(resultReady(data))
+      
+    })
+  }
+  componentDidMount() {
+    const self = this
+    fetch(`https://api.tvmaze.com/search/shows?q=${this.props.match.params.search}`)
+    .then((resp) => resp.json())
+    .then(function(data) {
+      self.setState({
+        results: data
+      })
+     // self.props.dispatch(resultReady(data))
+      
+    })
+  }
+*/
+
   componentDidMount() {
     const self = this
     fetch(`https://api.tvmaze.com/shows/${this.props.match.params.id}`)
@@ -28,7 +54,7 @@ class ShowPage extends React.Component {
       this.state.show ?
       
         <div className="show-detail">
-         <Navbar_ title={this.state.show.name}></Navbar_>
+         <Navbar title={this.state.show.name}></Navbar>
           <Container className="container">
             <h1 className="my-4">{this.state.show.name}
               <sub><span className="text-muted"> {this.state.show.status}</span></sub>
