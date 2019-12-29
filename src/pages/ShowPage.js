@@ -11,32 +11,7 @@ class ShowPage extends React.Component {
        show:null,
       };
    }
-/*
-   componentDidUpdate(){
-    const self = this
-    fetch(`https://api.tvmaze.com/search/shows?q=${this.props.match.params.id}`)
-    .then((resp) => resp.json())
-    .then(function(data) {
-      self.setState({
-        results: data
-      })
-     // self.props.dispatch(resultReady(data))
-      
-    })
-  }
-  componentDidMount() {
-    const self = this
-    fetch(`https://api.tvmaze.com/search/shows?q=${this.props.match.params.search}`)
-    .then((resp) => resp.json())
-    .then(function(data) {
-      self.setState({
-        results: data
-      })
-     // self.props.dispatch(resultReady(data))
-      
-    })
-  }
-*/
+
 
   componentDidMount() {
     const self = this
