@@ -32,9 +32,10 @@ class NavbarSearch extends React.Component {
   render() {
     return (
       
-        <Form className="form-inline my-2 my-lg-0" onSubmit={this.onSubmitHandler}>
-          <Form.Control className="form-control mr-sm-2" type="search" value={this.state.searchMessage} onChange={this.onSearchChangeHandler} placeholder="Search" aria-label="Search" />
+        <Form inline className="mr-sm-2" onSubmit={this.onSubmitHandler}>
+          <Form.Control type="search" value={this.state.searchMessage} onChange={this.onSearchChangeHandler} placeholder="Search" aria-label="Search" />
           <Button variant="outline-success" type="submit">Search</Button>
+       
         </Form>
     
     )

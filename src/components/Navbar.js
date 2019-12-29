@@ -29,7 +29,7 @@ class Navbar extends React.Component {
               <same.Button variant="light" onClick={this.onGoBackButtonHandler}><span>&larr;</span></same.Button>
           <same.Navbar.Brand>{this.props.title}</same.Navbar.Brand>
           
-          <same.Button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" >        </same.Button>       
+         
               </same.Nav>
 
                       <NavbarSearch />
