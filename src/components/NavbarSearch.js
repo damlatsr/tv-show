@@ -23,6 +23,7 @@ class NavbarSearch extends React.Component {
     })
   }
 
+  //search tetikleyici.
   onSubmitHandler(dispatch, event) {
     dispatch(receiveNewSearch(this.state.searchMessage))
     this.props.history.push(`/${this.state.searchMessage}`);
@@ -35,7 +36,6 @@ class NavbarSearch extends React.Component {
         <Form inline className="mr-sm-2" onSubmit={this.onSubmitHandler}>
           <Form.Control type="search" value={this.state.searchMessage} onChange={this.onSearchChangeHandler} placeholder="Search" aria-label="Search" />
           <Button variant="outline-success" type="submit">Search</Button>
-       
         </Form>
     
     )

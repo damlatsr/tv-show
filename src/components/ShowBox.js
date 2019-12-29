@@ -2,7 +2,7 @@ import React from 'react'
 import {withRouter} from 'react-router-dom'
 import { Card } from 'react-bootstrap';
 
-
+//Anasayfa
 
 class ShowBox extends React.Component {
   constructor(props) {
@@ -26,10 +26,6 @@ class ShowBox extends React.Component {
           <Card.Link onClick={this.onClickHandler} >Please, <b>Click</b> to see The Details..</Card.Link>
         </Card.Body>
       </Card>
-     
-     
-     
-      
     )
   }
 }

@@ -1,9 +1,9 @@
-// actions
+// actions oluşturuldu.
 export const APPEND_NEW_RESULTS = 'APPEND_NEW_RESULTS'
 
 
 
-
+//tetikleniyor ve dispatch ediliyor.
 export const receiveNewSearch = searchText => {
     console.log({a:searchText})
     
@@ -16,7 +16,7 @@ export const receiveNewSearch = searchText => {
 }
 }
 
-// action creators
+//actions creator
 export const appendNewResults = results =>  ({
     type: APPEND_NEW_RESULTS,
     results: results
