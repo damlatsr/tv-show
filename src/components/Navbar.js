@@ -19,19 +19,11 @@ class Navbar extends React.Component {
  
         
         <same.Navbar bg="light" expand="lg"> 
-          <same.NavbarBrand onClick={this.onGoBackButtonHandler}>Home</same.NavbarBrand>
+         
           <same.Button variant="light" onClick={this.onGoBackButtonHandler}><span>&larr;</span></same.Button>
           <same.Navbar.Brand>{this.props.title}</same.Navbar.Brand>
-          
-          <same.Button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span className="navbar-toggler-icon"></span>
-          </same.Button>
-
-          <div className="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul className="navbar-nav mr-auto">
-            </ul>
             <NavbarSearch />
-          </div>
+         
         </same.Navbar>  
       
     )
