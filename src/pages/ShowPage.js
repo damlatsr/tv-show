@@ -55,17 +55,18 @@ class ShowPage extends React.Component {
                 <Card.Title className="my-3">Schedule</Card.Title>
               <ListGroup variant="flush">
                   <ListGroup.Item disabled>{
-                  (this.state.show.schedule && this.state.show.schedule.time.lenght != null) ?
+                  this.state.show.schedule.time ?
                   this.state.show.schedule.time
                   :<span>time information not found...</span>
                 }</ListGroup.Item>
                   <ListGroup.Item disabled>{
-                  (this.state.show.schedule && this.state.show.schedule.days.lenght != null) ?
+                  this.state.show.schedule.days != "" ?
                   this.state.show.schedule.days
                   :<span>day information not found...</span>
                 }</ListGroup.Item>
                  <ListGroup.Item disabled>{
-                  (this.state.show.rating && this.state.show.rating.lenght != null) ?
+
+                  this.state.show.rating.average ?
                   this.state.show.rating.average
                   :<span>average information not found...</span>
                 }</ListGroup.Item>
