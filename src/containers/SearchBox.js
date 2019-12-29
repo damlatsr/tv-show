@@ -15,9 +15,9 @@ class SearchBox extends React.Component {
 
   render() {
     return (
-      <Form onSubmit={this.onSubmitHandler}>
-        <Row className="row">
-          <Col className="col-6">
+      <Form>
+        <Row>
+          <Col md={6}>
             <input type="search" value={this.state.searchMessage} onChange={this.onSearchChangeHandler} placeholder="Search" ref="search" />
           </Col>
         </Row>

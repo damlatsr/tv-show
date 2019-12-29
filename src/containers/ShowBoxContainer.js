@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import Loading from '../components/Loading';
 import Navbar from '../components/Navbar'
 import {withRouter} from 'react-router-dom'
+import { Container, Col, CardColumns, Row } from 'react-bootstrap';
 
 class ShowBoxContainer extends React.Component {
 
@@ -14,12 +15,12 @@ class ShowBoxContainer extends React.Component {
 
   render() {
     return (
-<div>
+<Container fluid>
     <Navbar />
-      <div className="row m-3">
+      <Row className="row m-3">
          
-        <div className="col-10 offset-1">
-          <div className="card-columns">
+        <Col>
+          <CardColumns>
           {
             this.props.requests.results.length > 0 ?
             this.props.requests.results.map((show, index) => {
@@ -27,10 +28,10 @@ class ShowBoxContainer extends React.Component {
             }) :
             <Loading />
           }
-          </div>
-        </div>
-      </div>
-      </div>
+          </CardColumns>
+        </Col>
+      </Row>
+      </Container>
     )
   }
 }
