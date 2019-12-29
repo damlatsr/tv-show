@@ -1,20 +1,25 @@
 // actions
-export const RECEIVE_NEW_SEARCH = 'RECEIVE_NEW_SEARCH'
-export const RESULT_READY = 'RESULT_READY'
+export const APPEND_NEW_RESULTS = 'APPEND_NEW_RESULTS'
 
 
 
+
+export const receiveNewSearch = searchText => {
+    console.log({a:searchText})
+    
+    return dispatch => {
+        return fetch(`https://api.tvmaze.com/search/shows?q=${searchText}`)
+        .then((resp) => resp.json())
+        .then(function(data) {
+          dispatch(appendNewResults(data)) 
+    })
+}
+}
 
 // action creators
-export const receiveNewSearch = searchMessage =>  ({
-    type: RECEIVE_NEW_SEARCH,
-    searchMessage
-})
-
-
-export const resultReady = results =>  ({
-    type: RESULT_READY,
-    results
+export const appendNewResults = results =>  ({
+    type: APPEND_NEW_RESULTS,
+    results: results
 })
 
 
