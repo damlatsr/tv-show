@@ -1,32 +1,47 @@
-import React from 'react'
-import {withRouter} from 'react-router-dom'
-import { Card } from 'react-bootstrap';
+import React from "react";
+import { withRouter } from "react-router-dom";
+import { Card } from "react-bootstrap";
 
 //Anasayfa
 
 class ShowBox extends React.Component {
   constructor(props) {
     super(props);
-    this.onClickHandler = this.onClickHandler.bind(this)
+    this.onClickHandler = this.onClickHandler.bind(this);
   }
+
   onClickHandler(event) {
-    this.props.history.push(`/show/${this.props.show.id}`)
+    this.props.history.push(`/show/${this.props.show.id}`);
   }
 
   render() {
-    return (
-        
-      <Card border="light">
-        <Card.Body>
+    return React.createElement(
+      Card,
+      {
+        border: "light"
+      },
+      React.createElement(
+        Card.Body,
+        null,
+        this.props.show.image
+          ? React.createElement(Card.Img, {
+              onClick: this.onClickHandler,
+              src: this.props.show.image.original,
+              alt: this.props.show.name
+            })
+          : null,
+        React.createElement(Card.Title, null, this.props.show.name),
+        React.createElement(
+          Card.Link,
           {
-              this.props.show.image ?
-            <Card.Img onClick={this.onClickHandler} src={this.props.show.image.original} alt={this.props.show.name} />: null
-          }
-          <Card.Title>{this.props.show.name}</Card.Title>
-          <Card.Link onClick={this.onClickHandler} >Please, <b>Click</b> to see The Details..</Card.Link>
-        </Card.Body>
-      </Card>
-    )
+            onClick: this.onClickHandler
+          },
+          "Please, ",
+          React.createElement("b", null, "Click"),
+          " to see The Details.."
+        )
+      )
+    );
   }
 }
 
