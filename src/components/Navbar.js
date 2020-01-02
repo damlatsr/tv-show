@@ -16,18 +16,27 @@ class Navbar extends React.Component {
   render() {
     return (
  
-        
-        <same.Navbar bg="light" expand="lg"> 
-             <same.Navbar.Toggle aria-controls="basic-navbar-nav" />
-            <same.Navbar.Collapse id="basic-navbar-nav">
-                  <same.Nav className="mr-auto">
-                  <same.Button variant="light" onClick={this.onGoBackButtonHandler}><span>&larr;</span></same.Button>
-                  <same.Navbar.Brand>{this.props.title}</same.Navbar.Brand>
-                  </same.Nav>
-                                <NavbarSearch />
-            </same.Navbar.Collapse>
-        </same.Navbar>  
-      
+      React.createElement(same.Navbar, {
+        bg: "light",
+        expand: "lg"
+      }, 
+      React.createElement(same.Navbar.Toggle, {
+        "aria-controls": "basic-navbar-nav"
+      }), 
+      React.createElement(same.Navbar.Collapse, {
+        id: "basic-navbar-nav"
+      }, 
+      React.createElement(same.Nav, {
+        className: "mr-auto"
+      },
+       React.createElement(same.Button, {
+        variant: "light",
+        onClick: this.onGoBackButtonHandler
+      }, 
+      React.createElement("span", null, "\u2190")), 
+      React.createElement(same.Navbar.Brand, null, this.props.title)),
+       React.createElement(NavbarSearch, null))
+       )
     )
   }
 }
