@@ -1,15 +1,29 @@
-import React from 'react'
-import { Container,Row } from 'react-bootstrap'
+import React from "react";
+import { Container, Row } from "react-bootstrap";
 
 
 const Loading = () => {
-  return (
-    <Container className="loading">
-    <Row className="spinner-grow" role="status">
-      <span className="sr-only">Loading...</span>
-    </Row>
-  </Container>
+  return React.createElement(
+    Container,
+    {
+      className: "loading"
+    },
+    React.createElement(
+      Row,
+      {
+        className: "spinner-grow",
+        role: "status"
+      },
+      React.createElement(
+        "span",
+        {
+          className: "sr-only"
+        },
+        "Loading..."
+      )
+    )
   );
-}
+};
+
 
 export default Loading;
